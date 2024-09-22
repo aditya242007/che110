@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tree Data</title>
+    <link rel="stylesheet" href="che.css">
+    <script>
+        // Open the modal with dynamic content
+        function openModal(imageSrc, captionText) {
+            var modal = document.getElementById("myModal");
+            var modalImg = document.getElementById("modalImage");
+            var caption = document.getElementById("caption");
+
+            modal.style.display = "block";
+            modalImg.src = imageSrc;
+            caption.innerHTML = captionText;
+}
+
+        // Close the modal
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+}
+
+</script>
+<style>
+    /* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f0f5f1;
+}
+
+/* Banner Section */
+/* Banner background image */
+.banner {
+    position: relative;
+    height: 400px; /* Adjust the height as needed */
+    background-image: url('https://images.pexels.com/photos/1632790/pexels-photo-1632790.jpeg?cs=srgb&dl=pexels-jplenio-1632790.jpg&fm=jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+/* Dark overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity for a darker or lighter overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Banner text */
+.banner h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.banner p {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+
+/* Tree Data Section */
+#tree-data {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.tree-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tree-card {
+    background: linear-gradient(0deg, rgba(253,187,45,1) 55%, rgba(238,126,146,1) 72%);
+    margin: 10px;
+    padding: 20px;
+    width: 250px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Initial subtle shadow */
+}
+
+.tree-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Hover effect for the card */
+.tree-card:hover {
+    transform: scale(1.05); /* Slightly enlarges the card */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+
+/* Gallery Section */
+#gallery {
+    padding: 50px 20px;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 50%, rgba(148,187,233,1) 100%);;
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid layout */
+    gap: 20px; /* Adds 20px space between cards */
+    padding: 20px; /* Optional: adds padding inside the grid container */
+}
+
+/* Gallery Item Styling */
+/* Gallery item hover effect */
+.gallery-item {
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    background: black;
+    border-radius: 3%;
+    color: white;
+}
+.gallery-item img{
+    width:100px;
+    height:100px;
+}
+
+/* Modal styling */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+/* Hover effect for Gallery Items */
+.gallery-item:hover {
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.622); /* Enhance shadow on hover */
+}
+
+/* About Section Styling */
+#about {
+    background-color: #f0f4f3;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#about h2 {
+    color: #2d6a4f;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#about p {
+    color: #344e41;
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+#about p:last-child {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #40916c;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #about {
+        padding: 30px 15px;
+    }
+
+    #about h2 {
+        font-size: 2em;
+    }
+
+    #about p {
+        font-size: 1em;
+    }
+}
+
+/* Contact Section */
+#contact {
+    padding: 50px 20px;
+    background-color: #eef5e6;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+input, textarea {
+    padding: 10px;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+
+
+
+
+</style>
+</head>
+<body>
+
+    <!-- Home Section -->
+    <header class="banner">
+        <div class="overlay">
+            <h1>Welcome to the green space </h1>
+            <p>Sharing knowledge about different tree species</p>
+        </div>
+    </header>
+
+    <!-- Tree Data Section -->
+<section id="tree-data">
+    <h2>Tree Species Data</h2>
+    <div class="tree-grid">
+        <!-- kadam Tree -->
+        <div class="tree-card">
+            <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQzdtwa1sXDBT0KJDxUYXJOHE0cPe2JTBKp1VF6ftI2vzUh5AtD" alt="kadam Tree">
+            <h3>kadam Tree</h3>
+            <p><strong>Height:</strong> 20-30m</p>
+            <p><strong>Region:</strong> Europe, North America</p>
+            <p><strong>Environmental Impact:</strong> High oxygen output, supports wildlife</p>
+        </div>
+
+        <!-- Pine Tree -->
+        <div class="tree-card">
+            <img src="pine-tree.jpg" alt="Pine Tree">
+            <h3>Pine Tree</h3>
+            <p><strong>Height:</strong> 15-45m</p>
+            <p><strong>Region:</strong> Northern Hemisphere</p>
+            <p><strong>Environmental Impact:</strong> Carbon sequestration, soil stabilization</p>
+        </div>
+
+        <!-- Birch Tree -->
+        <div class="tree-card">
+            <img src="birch-tree.jpg" alt="Birch Tree">
+            <h3>Birch Tree</h3>
+            <p><strong>Height:</strong> 10-20m</p>
+            <p><strong>Region:</strong> Northern Hemisphere, cold climates</p>
+            <p><strong>Environmental Impact:</strong> Low water consumption, supports wildlife</p>
+        </div>
+
+        <!-- Maple Tree -->
+        <div class="tree-card">
+            <img src="maple-tree.jpg" alt="Maple Tree">
+            <h3>Maple Tree</h3>
+            <p><strong>Height:</strong> 12-45m</p>
+            <p><strong>Region:</strong> North America, Asia</p>
+            <p><strong>Environmental Impact:</strong> Shade provider, moderate oxygen output</p>
+        </div>
+
+        <!-- Redwood Tree -->
+        <div class="tree-card">
+            <img src="redwood-tree.jpg" alt="Redwood Tree">
+            <h3>Redwood Tree</h3>
+            <p><strong>Height:</strong> 60-110m</p>
+            <p><strong>Region:</strong> Western United States</p>
+            <p><strong>Environmental Impact:</strong> Long-lived, carbon storage, wildlife habitat</p>
+        </div>
+
+        <!-- Baobab Tree -->
+        <div class="tree-card">
+            <img src="baobab-tree.jpg" alt="Baobab Tree">
+            <h3>Baobab Tree</h3>
+            <p><strong>Height:</strong> 5-25m</p>
+            <p><strong>Region:</strong> Africa, Australia</p>
+            <p><strong>Environmental Impact:</strong> Water storage, supports ecosystem diversity</p>
+        </div>
+
+        <!-- Cherry Blossom Tree -->
+        <div class="tree-card">
+            <img src="cherry-blossom-tree.jpg" alt="Cherry Blossom Tree">
+            <h3>Cherry Blossom Tree</h3>
+            <p><strong>Height:</strong> 4-12m</p>
+            <p><strong>Region:</strong> East Asia, Japan</p>
+            <p><strong>Environmental Impact:</strong> Aesthetic value, supports pollinators</p>
+        </div>
+
+        <!-- Mahogany Tree -->
+        <div class="tree-card">
+            <img src="mahogany-tree.jpg" alt="Mahogany Tree">
+            <h3>Mahogany Tree</h3>
+            <p><strong>Height:</strong> 30-45m</p>
+            <p><strong>Region:</strong> Central and South America</p>
+            <p><strong>Environmental Impact:</strong> Provides shade, valuable timber species</p>
+        </div>
+
+        <!-- Mangrove Tree -->
+        <div class="tree-card">
+            <img src="mangrove-tree.jpg" alt="Mangrove Tree">
+            <h3>Mangrove Tree</h3>
+            <p><strong>Height:</strong> 2-10m</p>
+            <p><strong>Region:</strong> Tropical and Subtropical Coastlines</p>
+            <p><strong>Environmental Impact:</strong> Coastal protection, carbon sequestration</p>
+        </div>
+
+        <!-- Olive Tree -->
+        <div class="tree-card">
+            <img src="olive-tree.jpg" alt="Olive Tree">
+            <h3>Olive Tree</h3>
+            <p><strong>Height:</strong> 3-10m</p>
+            <p><strong>Region:</strong> Mediterranean, Middle East</p>
+            <p><strong>Environmental Impact:</strong> Low water consumption, provides food and oil</p>
+        </div>
+
+    </div>
+<!-- Gallery Section -->
+<section id="gallery">
+    <h2>Tree Gallery</h2>
+    <div class="gallery-grid">
+        <!-- Kadam Tree Card -->
+        <div class="gallery-item" onclick="openModal('CHE 110 qr .jpeg', 'Kadam Tree')">
+            <img src="CHE 110 qr .jpeg" alt="Kadam Tree" >
+            <p>Kadam Tree</p>
+        </div>
+
+        <!-- Pine Tree Card -->
+        <div class="gallery-item" onclick="openModal('CHE 110 qr .jpeg', 'Pine Tree')">
+            <img src="CHE 110 qr .jpeg" alt="Pine Tree"  >
+            <p>Pine Tree</p>
+        </div>
+
+        <!-- Birch Tree Card -->
+        <div class="gallery-item" onclick="openModal('birch-tree.jpg', 'Birch Tree - Northern Hemisphere')">
+            <img src="CHE 110 qr .jpeg" alt="Birch Tree">
+            <p>Birch Tree - Northern Hemisphere</p>
+        </div>
+
+        <!-- Maple Tree Card -->
+        <div class="gallery-item" onclick="openModal('maple-tree.jpg', 'Maple Tree - North America, Asia')">
+            <img src="CHE 110 qr .jpeg" alt="Maple Tree">
+            <p>Maple Tree - North America, Asia</p>
+        </div>
+
+        <!-- Redwood Tree Card -->
+        <div class="gallery-item" onclick="openModal('redwood-tree.jpg', 'Redwood Tree - Western United States')">
+            <img src="CHE 110 qr .jpeg" alt="Redwood Tree" >
+            <p>Redwood Tree - Western United States</p>
+        </div>
+
+        <!-- Baobab Tree Card -->
+        <div class="gallery-item" onclick="openModal('baobab-tree.jpg', 'Baobab Tree - Africa, Australia')">
+            <img src="CHE 110 qr .jpeg" alt="Baobab Tree">
+            <p>Baobab Tree - Africa, Australia</p>
+        </div>
+
+        <!-- Cherry Blossom Tree Card -->
+        <div class="gallery-item" onclick="openModal('cherry-blossom-tree.jpg', 'Cherry Blossom Tree - East Asia, Japan')">
+            <img src="CHE 110 qr .jpeg" alt="Cherry Blossom Tree">
+            <p>Cherry Blossom Tree - East Asia, Japan</p>
+        </div>
+
+        <!-- Mahogany Tree Card -->
+        <div class="gallery-item" onclick="openModal('mahogany-tree.jpg', 'Mahogany Tree - Central and South America')">
+            <img src="CHE 110 qr .jpeg" alt="Mahogany Tree">
+            <p>Mahogany Tree - Central and South America</p>
+        </div>
+
+        <!-- Mangrove Tree Card -->
+        <div class="gallery-item" onclick="openModal('mangrove-tree.jpg', 'Mangrove Tree - Tropical Coastlines')">
+            <img src="CHE 110 qr .jpeg" alt="Mangrove Tree">
+            <p>Mangrove Tree - Tropical Coastlines</p>
+        </div>
+
+        <!-- Olive Tree Card -->
+        <div class="gallery-item" onclick="openModal('olive-tree.jpg', 'Olive Tree - Mediterranean, Middle East')">
+            <img src="CHE 110 qr .jpeg" alt="Olive Tree">
+            <p>Olive Tree - Mediterranean, Middle East</p>
+        </div>
+    </div>
+
+    <!-- Modal structure -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption"></div>
+    </div>
+</section>
+
+
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We aim to educate people about different tree species, their environmental impact, and the importance of forest conservation.</p>
+    </section>
+
+    <!-- Contact Section -->
+    
+        
+    <em><p>feature's powered by &copy;aditya kalure </p></em>
+</body>
+</html>
+
+
