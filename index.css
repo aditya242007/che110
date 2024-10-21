@@ -1,0 +1,300 @@
+/* General Styles */
+body {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #bbb;
+}
+/* Navigation Bar Styles with Background Image */
+/* Navigation Bar Styles with Background Image */
+nav {
+    padding: 1em;
+    display: flex;
+    justify-content: space-between; /* To position left and right nav items */
+    align-items: center;
+    background-color: black;
+}
+
+/* Left-aligned navigation items */
+.nav-left {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-left li {
+    margin: 0 15px;
+}
+
+.nav-left li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+
+.nav-left li a:hover {
+    background-color: #565151; /* Darker hover effect */
+}
+
+/* Right-aligned navigation items (Sign Up, Log In) */
+.nav-right {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-right li {
+    margin: 0 15px;
+}
+
+.nav-right li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 16px;
+    background-color: #565151;
+    border-radius: 5px;
+}
+
+.nav-right li a:hover {
+    background-color: rgb(33, 181, 55); /* Darker hover effect */
+}
+
+/* Header/Banner Section with Background Image */
+.banner {
+    background-image: url('https://img.freepik.com/premium-photo/nature-green-leaf-greenery-wallpaper_41969-17862.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.banner .overlay {
+    padding: 20px;
+}
+
+.banner h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.banner p {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+
+/* Tree Data Section */
+#tree-data {
+    padding: 50px 20px;
+    background-image: url('https://img.freepik.com/premium-photo/nature-green-leaf-greenery-wallpaper_41969-17862.jpg');
+    text-align: center;
+    color: white;
+}
+
+.tree-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tree-card {
+    background: rgb(19,51,10);
+    background: linear-gradient(90deg, rgba(19,51,10,1) 0%, rgba(74,121,9,1) 56%, rgba(32,77,20,1) 100%);
+    margin: 10px;
+    padding: 20px;
+    width: 250px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Initial subtle shadow */
+}
+
+.tree-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Hover effect for the card */
+.tree-card:hover {
+    transform: scale(1.05); /* Slightly enlarges the card */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+
+/* Gallery Section */
+#gallery {
+    padding: 50px 20px;
+    background: rgb(19,51,10);
+    background: linear-gradient(90deg, rgba(19,51,10,1) 0%, rgba(187,224,136,1) 48%, rgba(32,77,20,1) 100%);
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid layout */
+    gap: 20px; /* Adds 20px space between cards */
+    padding: 20px; /* Optional: adds padding inside the grid container */
+}
+
+/* Gallery Item Styling */
+/* Gallery item hover effect */
+.gallery-item {
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    background: black;
+    border-radius: 3%;
+    color: white;
+}
+.gallery-item img{
+    width:100px;
+    height:100px;
+}
+
+/* Modal styling */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+/* Hover effect for Gallery Items */
+.gallery-item:hover {
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.622); /* Enhance shadow on hover */
+}
+
+/* About Section Styling */
+#about {
+    background-color: #f0f4f3;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#about h2 {
+    color: #2d6a4f;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#about p {
+    color: #344e41;
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+#about p:last-child {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #40916c;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #about {
+        padding: 30px 15px;
+    }
+
+    #about h2 {
+        font-size: 2em;
+    }
+
+    #about p {
+        font-size: 1em;
+    }
+}
+
+/* Contact Section */
+#contact {
+    padding: 50px 20px;
+    background-color: #eef5e6;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+input, textarea {
+    padding: 10px;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
